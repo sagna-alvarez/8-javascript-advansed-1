@@ -1,11 +1,16 @@
 import css from 'rollup-plugin-import-css';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { liveServer } from 'rollup-plugin-live-server';
 
 export default {
     input: "src/app.js",
     output: {
         dir: "dist",
-        format: "iife"
+        // entryFileNames: app.js,
+        format: 'iife',
+        name: 'MyBundle',
+        assetFileNames: 'bundle.css',
     },
-    plugin: [css(), nodeResolve()]
+    plugins: [css(), nodeResolve(), liveServer()]
+
 }
