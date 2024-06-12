@@ -1232,6 +1232,7 @@
 				</div>
 			</div>
 		`;
+
     		if (existInFavorites) {
     			this.el
     				.querySelector('button').addEventListener('click', this.#deleteFromFavorites.bind(this));
@@ -1264,7 +1265,7 @@
 
 
             for (const card of this.parentState.list) {
-                cardGrid.el.append(new Card(this.appState, card).render());
+                cardGrid.append(new Card(this.appState, card).render());
             }
             return this.el;
         }
@@ -1291,11 +1292,6 @@
                 this.render();
             }
         };
-
-
-
-
-
 
         render() {
             const main = document.createElement('div');
@@ -1384,7 +1380,7 @@
     class App {
         routes = [
             { path: "", view: MainView },
-            { path: "", view: FavoritesView },
+            { path: "#favorites", view: FavoritesView },
         ];
         appState = {
             favorites: []

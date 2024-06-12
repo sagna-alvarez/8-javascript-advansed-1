@@ -23,7 +23,7 @@ export class CardList extends DivComponent {
 
 
         for (const card of this.parentState.list) {
-            cardGrid.el.append(new Card(this.appState, card).render());
+            cardGrid.append(new Card(this.appState, card).render());
         }
         return this.el;
     }

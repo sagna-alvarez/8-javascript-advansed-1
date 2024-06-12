@@ -27,11 +27,6 @@ export class FavoritesView extends AbstractView {
         }
     };
 
-
-
-
-
-
     render() {
         const main = document.createElement('div');
         main.innerHTML = `
